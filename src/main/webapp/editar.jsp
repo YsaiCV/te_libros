@@ -15,9 +15,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1>Nuevo libro</h1>
+        <%if(lib.getId() == 0){%>
+            <h1>Nuevo Libro</h1>
+        <%}else{%>
+            <h1>Editar Libro</h1>
+        <%}%>
         <form action="MainController" method="post">
             <input type="hidden" name="id" value="${lib.id}">
             <table>
